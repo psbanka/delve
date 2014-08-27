@@ -13,7 +13,7 @@ define(function (require) {
         */
         main: function() {
             console.log('delveClient is online.');
-            var cardPageHtml = cardPageTmpl({});
+            var cardPageHtml = cardPageTmpl({static: '/static'});
             $('body').append(cardPageHtml);
         },
     };
