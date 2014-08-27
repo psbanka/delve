@@ -1,0 +1,25 @@
+doctype html
+meta(charset='utf-8')
+html(xmlns='http://www.w3.org/1999/xhtml')
+    head
+    block title
+        title Delve
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    meta(name="description" content="Delve UI")
+    meta(name="author" content="Peter Banka")
+    link(rel="stylesheet" type="text/css" href="#{static}/css/index.css")
+    link(rel="stylesheet" type="text/css" href="#{static}/bower_components/bootstrap/dist/css/bootstrap.min.css")
+    script(type="text/javascript" src="#{static}/bower_components/requirejs/require.js")
+    script(type="text/javascript" src="#{static}/js/config.js")
+    script(type="text/javascript").
+        require(['jquery', 'delve-client'], function ($, DelveClient) {
+                $(document).ready(function() {
+                    var delveClient = new DelveClient();
+                    delveClient.main();
+                });
+            }
+        );
+
+body.body

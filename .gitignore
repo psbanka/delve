@@ -1,3 +1,14 @@
+# Vim
+.*.swp
+.*.swo
+
+# bower
+src/public/bower_components
+
+# Jade / less
+src/public/css/*.css
+src/server/views/*.html
+
 # Logs
 logs
 *.log

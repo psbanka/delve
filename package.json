@@ -1,0 +1,14 @@
+{
+  "name": "delve",
+  "description": "Web client for Delve RPG",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/psbanka/delve.git"
+  },
+  "author": "Peter Banka",
+  "license": "GPLv3",
+  "dependencies": {
+    "underscore": "^1.6.0"
+  }
+}
