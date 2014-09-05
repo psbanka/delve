@@ -18,33 +18,40 @@ nav(class="navbar navbar-default navbar-fixed-top" role="navigation")
 div.container
     div(class="row")
         div.well
-            h1 Build your deck
-            p.lead Select your cards from below to build your deck on the right #{static}
+            h1 Build Your Wayfarer
+            p.lead Basic information
     
-    div(class="row")
-      div(class="col-md-3")
-        div.thumbnail
-          img(style="width: 200px" src="#{static}/css/images/card.jpg" alt="A cool card")
-          div(class="caption")
-              h3 Thumbnail label
-              p Flavor text
-              p
-                a(href="#" class="btn btn-primary" role="button") Select
-      div(class="col-md-3")
-        a(href="#" class="thumbnail")
-          img(class="img-thumbnail" style="width: 200px" src="#{static}/css/images/card.jpg" alt="A cool card")
-      div(class="col-md-3")
-        a(href="#" class="thumbnail")
-          img(class="img-thumbnail" style="width: 200px" src="#{static}/css/images/card.jpg" alt="A cool card")
-      div(class="col-md-3")
-        a(href="#" class="thumbnail")
-          img(class="img-thumbnail" style="width: 200px" src="#{static}/css/images/card.jpg" alt="A cool card")
-      div(class="col-md-3")
-        a(href="#" class="thumbnail")
-          img(class="img-thumbnail" style="width: 200px" src="#{static}/css/images/card.jpg" alt="A cool card")
-      div(class="col-md-3")
-        a(href="#" class="thumbnail")
-          img(class="img-thumbnail" style="width: 200px" src="#{static}/css/images/card.jpg" alt="A cool card")
-      div(class="col-md-3")
-        a(href="#" class="thumbnail")
-          img(class="img-thumbnail" style="width: 200px" src="#{static}/css/images/card.jpg" alt="A cool card")
+    form
+        div(class="form-group")
+            label(for="wayfarerName") Name
+            input(type="text" class="form-control" id="wayfarerName" placeholder="What is the name of your wayfarer?")
+        div(class="form-group")
+            label(for="level") Level
+            input(type="text" class="form-control" id="level" placeholder="1")
+        
+        h4 Select a Class
+        div(class="row well")
+            div.thirds
+            div(class="class-container")
+                div(class="icons")
+                    div.wayfarer-class
+                div(class="icons")
+                    div.wayfarer-class
+                div(class="icons")
+                    div.wayfarer-class
+                div(class="icons")
+                    div.wayfarer-class
+                div(class="icons")
+                    div.wayfarer-class
+                div(class="icons")
+                    div.wayfarer-class
+                div(class="icons")
+                    div.wayfarer-class
+                div(class="icons")
+                    div.wayfarer-class
+                div(class="icons")
+                    div.wayfarer-class
+            div.thirds
+
+    div.row
+        button(type="submit" class="btn btn-primary") Next
