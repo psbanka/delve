@@ -7,7 +7,6 @@
 
 var CHROME_EXEC = '/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome';
 var __ = require('lodash');
-var helper = require('cy-toolkit').gruntHelper;
 
 var allJsFiles = [
     './Gruntfile.js',
@@ -18,15 +17,8 @@ var allJsFiles = [
 
 module.exports = function (grunt) {
 
-    // initialize the helper with the grunt instance
-    helper.init(grunt);
-
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-
-        eslint: helper.opts.eslint({
-            files: allJsFiles,
-        }),
 
         concurrent: {
             dev: ['static', 'nodemon', 'watch'],
@@ -155,18 +147,14 @@ module.exports = function (grunt) {
             },
         },
 
-        filenames: helper.opts.filenames({
-            files: __(allJsFiles).without('./Gruntfile.js'),
-        }),
-
-        jsdoc: helper.opts.jsdoc(),
     });
+
+    grunt.loadNpmTasks('grunt-contrib-jade');
+    grunt.loadNpmTasks('grunt-contrib-less');
 
     grunt.registerTask('run', ['concurrent:dev']);
 
-    // register aliases (dependencies will be loaded when they are run)
-    helper.registerTaskAlias('build', ['jade', 'less']);
-    helper.registerTaskAlias('static', ['build', 'requirejs:static', 'copy:static']);
-    helper.registerTaskAlias('default', ['build']);
-    helper.registerTaskAlias('lint', ['eslint', 'filenames']);
+    grunt.registerTask('build', ['jade', 'less']);
+    grunt.registerTask('static', ['build', 'requirejs:static', 'copy:static']);
+    grunt.registerTask('default', ['build']);
 };
